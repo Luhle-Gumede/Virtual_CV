@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create/Edit CV</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="thebody">
+    <header class="theheader">
+        <div class="container">
+            <h1 id="thefirst">Create/Edit Your CV</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="general-info">
+            <h2>General Information</h2>
+            <form id="generalInfoForm">
+                <div class="info-group">
+                    <label for="profilePicture">Profile Picture:</label>
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+                </div>
+                <div class="info-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="info-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="info-group">
+                    <label for="contact">Contact:</label>
+                    <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}">
+                </div>
+                <div class="info-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="info-group">
+                    <label for="summary">Summary about yourself:</label>
+                    <textarea id="summary" name="summary" required></textarea>
+                </div>
+                <button type="submit">Save General Information</button>
+            </form>
+        </section>
+        <section class="sections-overview">
+            <h2>Sections</h2>
+            <div class="sections-container" id="sectionsContainer">
+                <!-- Default sections -->
+                <button id="section" data-section="experience">Experience</button>
+                <button id="section" data-section="education">Education</button>
+                <button id="section" data-section="skills">Skills</button>
+                <!-- Add more sections dynamically -->
+            </div>
+            <button id="addSectionBtn">Add New Section</button>
+        </section>
+        <section class="section-details" id="sectionDetails">
+            <!-- Section details will be dynamically injected here -->
+        </section>
+        <button id="submitAllBtn" type="submit">Submit CV</button>
+    </main>
+    <script src="cv.js"></script>
+</body>
+</html>
+
